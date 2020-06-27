@@ -1,0 +1,13 @@
+name: Generate Jar and deploy it to AWS Beanstalk
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build Jar file
+    runs-on: ubuntu-latest
+    steps:
+      - run : mvn clean install
+      - run: echo 'The time was ${{ steps.hello.outputs.time }}.'
